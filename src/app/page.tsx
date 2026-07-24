@@ -60,7 +60,7 @@ export default function Home() {
 
           {/* 푸터 */}
           <p className="text-center text-lol-text/30 text-xs mt-3">
-            Powered by Claude AI · 리그 오브 레전드는 Riot Games의 상표입니다
+            리그 오브 레전드는 Riot Games의 상표입니다
           </p>
         </div>
 

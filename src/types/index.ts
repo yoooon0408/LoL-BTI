@@ -33,7 +33,14 @@ export interface RecommendedChampion {
   reason: string;
 }
 
+export interface LolMbti {
+  type: string;
+  title: string;
+  description: string;
+}
+
 export interface Recommendation {
+  lolMbti: LolMbti;
   primaryPosition: Position;
   secondaryPosition: Position;
   positionReasons: Record<string, string>;

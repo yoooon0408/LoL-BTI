@@ -70,6 +70,11 @@ LoL에는 5가지 포지션이 있습니다:
 
 <<RECOMMENDATION>>
 {
+  "lolMbti": {
+    "type": "MBTI 4글자 (예: INTJ)",
+    "title": "LoL 성향 제목 (예: 혼자 강한 하드캐리형)",
+    "description": "이 MBTI가 이 플레이어에게 어울리는 이유 (2~3문장, 롤 성향과 연결해서 설명)"
+  },
   "primaryPosition": "포지션명",
   "secondaryPosition": "포지션명",
   "positionReasons": {

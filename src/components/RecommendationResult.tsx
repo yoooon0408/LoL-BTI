@@ -162,7 +162,7 @@ function PositionSection({
 }
 
 export default function RecommendationResult({ recommendation, onReset }: Props) {
-  const { primaryPosition, secondaryPosition, positionReasons, champions } = recommendation;
+  const { lolMbti, primaryPosition, secondaryPosition, positionReasons, champions } = recommendation;
 
   return (
     <div className="w-full animate-slide-up">
@@ -172,12 +172,26 @@ export default function RecommendationResult({ recommendation, onReset }: Props)
           <span className="text-lol-gold text-xs font-semibold tracking-wider">✨ 추천 완료</span>
         </div>
         <h2 className="text-lol-gold-light text-xl font-bold text-shadow-gold">
-          당신을 위한 챔피언 추천
+          당신을 위한 LoL-BTI 결과
         </h2>
         <p className="text-lol-text/60 text-sm mt-1">
-          선택하신 스타일에 맞는 포지션과 챔피언이에요
+          선택하신 스타일에 맞는 성향과 챔피언이에요
         </p>
       </div>
+
+      {/* LoL MBTI 카드 */}
+      {lolMbti && (
+        <div className="mb-6 rounded-2xl overflow-hidden border border-lol-gold/60 shadow-[0_0_24px_rgba(200,155,60,0.18)]">
+          <div className="bg-gradient-to-br from-lol-gold/20 to-lol-blue/10 px-5 py-5">
+            <p className="text-lol-gold/70 text-[10px] font-bold tracking-[0.2em] uppercase mb-1">LoL-BTI 유형</p>
+            <div className="flex items-baseline gap-3 mb-2">
+              <span className="text-lol-gold text-4xl font-black tracking-wider">{lolMbti.type}</span>
+              <span className="text-lol-gold-light text-base font-bold">{lolMbti.title}</span>
+            </div>
+            <p className="text-lol-text/80 text-sm leading-relaxed">{lolMbti.description}</p>
+          </div>
+        </div>
+      )}
 
       {/* 주 포지션 */}
       <PositionSection
