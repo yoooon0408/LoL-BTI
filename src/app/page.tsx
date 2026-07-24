@@ -59,9 +59,13 @@ export default function Home() {
           </div>
 
           {/* 푸터 */}
-          <p className="text-center text-lol-text/30 text-xs mt-3">
-            리그 오브 레전드는 Riot Games의 상표입니다
-          </p>
+          <div className="text-center text-lol-text/30 text-xs mt-3 flex items-center justify-center gap-3">
+            <span>리그 오브 레전드는 Riot Games의 상표입니다</span>
+            <span>·</span>
+            <a href="/privacy" className="hover:text-lol-text/60 transition-colors underline">
+              개인정보처리방침
+            </a>
+          </div>
         </div>
 
         {/* 오른쪽 사이드바 광고 — 데스크톱(xl+)에서만 표시 */}
