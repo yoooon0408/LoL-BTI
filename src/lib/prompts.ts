@@ -71,9 +71,9 @@ LoL에는 5가지 포지션이 있습니다:
 <<RECOMMENDATION>>
 {
   "lolMbti": {
-    "type": "MBTI 4글자 (예: INTJ)",
-    "title": "LoL 성향 제목 (예: 혼자 강한 하드캐리형)",
-    "description": "이 MBTI가 이 플레이어에게 어울리는 이유 (2~3문장, 롤 성향과 연결해서 설명)"
+    "code": "LoL-BTI 4-letter code. Combine exactly 4 uppercase letters using these rules: 1st letter: M(Melee/근접 전투) or R(Ranged/원거리 전투) / 2nd letter: S(Solo/솔로·독립) or T(Team/팀·협력) / 3rd letter: C(Carry/하드캐리) or U(Utility/유틸·지원) / 4th letter: E(Easy/단순한 스킬) or F(Flashy/화려한 콤보). Examples: MSCE, RTUF, MSCF, RTCE",
+    "title": "LoL-BTI 성향 이름. '~형'으로 끝나는 간결한 이름 (예: 혼자 강한 하드캐리형, 화려한 팀파이터형, 냉정한 원거리 저격형). 반드시 code의 4가지 성향이 자연스럽게 녹아있어야 함",
+    "description": "이 LoL-BTI 유형이 이 플레이어에게 어울리는 이유를 2~3문장으로 설명. 롤 플레이 성향과 자연스럽게 연결"
   },
   "primaryPosition": "포지션명",
   "secondaryPosition": "포지션명",

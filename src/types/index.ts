@@ -34,7 +34,7 @@ export interface RecommendedChampion {
 }
 
 export interface LolMbti {
-  type: string;
+  code: string;
   title: string;
   description: string;
 }

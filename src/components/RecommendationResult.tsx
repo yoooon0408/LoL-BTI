@@ -8,6 +8,17 @@ interface Props {
   onReset: () => void;
 }
 
+const CODE_MEANINGS: Record<string, { en: string; ko: string }> = {
+  M: { en: 'Melee',   ko: '근접' },
+  R: { en: 'Ranged',  ko: '원거리' },
+  S: { en: 'Solo',    ko: '솔로' },
+  T: { en: 'Team',    ko: '팀' },
+  C: { en: 'Carry',   ko: '캐리' },
+  U: { en: 'Utility', ko: '유틸' },
+  E: { en: 'Easy',    ko: '단순' },
+  F: { en: 'Flashy',  ko: '화려' },
+};
+
 const POSITION_EMOJI: Record<string, string> = {
   탑: '🛡️',
   정글: '🌿',
@@ -179,16 +190,37 @@ export default function RecommendationResult({ recommendation, onReset }: Props)
         </p>
       </div>
 
-      {/* LoL MBTI 카드 */}
+      {/* LoL-BTI 카드 */}
       {lolMbti && (
         <div className="mb-6 rounded-2xl overflow-hidden border border-lol-gold/60 shadow-[0_0_24px_rgba(200,155,60,0.18)]">
           <div className="bg-gradient-to-br from-lol-gold/20 to-lol-blue/10 px-5 py-5">
-            <p className="text-lol-gold/70 text-[10px] font-bold tracking-[0.2em] uppercase mb-1">LoL-BTI 유형</p>
-            <div className="flex items-baseline gap-3 mb-2">
-              <span className="text-lol-gold text-4xl font-black tracking-wider">{lolMbti.type}</span>
-              <span className="text-lol-gold-light text-base font-bold">{lolMbti.title}</span>
-            </div>
-            <p className="text-lol-text/80 text-sm leading-relaxed">{lolMbti.description}</p>
+            <p className="text-lol-gold/60 text-[10px] font-bold tracking-[0.25em] uppercase mb-3">LoL-BTI 유형</p>
+            {/* 코드 배지 */}
+            {lolMbti.code && (
+              <div className="flex gap-3 mb-3">
+                {lolMbti.code.split('').map((char, i) => {
+                  const meaning = CODE_MEANINGS[char];
+                  return (
+                    <div key={i} className="flex flex-col items-center gap-1">
+                      <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-lol-gold/25 border border-lol-gold/50 text-lol-gold font-black text-lg">
+                        {char}
+                      </span>
+                      {meaning && (
+                        <>
+                          <span className="text-lol-gold/70 text-[10px] font-semibold">{meaning.en}</span>
+                          <span className="text-lol-text/50 text-[10px]">{meaning.ko}</span>
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            {/* 타이틀 강조 */}
+            <p className="text-lol-gold-light text-2xl font-black leading-tight mb-3">
+              {lolMbti.title}
+            </p>
+            <p className="text-lol-text/75 text-sm leading-relaxed">{lolMbti.description}</p>
           </div>
         </div>
       )}
